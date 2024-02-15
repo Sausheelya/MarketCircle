@@ -1,0 +1,13 @@
+<h1>People List</h1>
+
+<ul>
+  <% @people.each do |person| %>
+    <li>
+      <%= link_to person.name, person_path(person) %>
+      <%= link_to 'Edit', edit_person_path(person) %>
+      <%= link_to 'Delete', person_path(person), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Person', new_person_path %>

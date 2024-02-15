@@ -1,0 +1,10 @@
+<h1><%= @person.name %></h1>
+
+<p>Email: <%= @person.detail.email %></p>
+<p>Title: <%= @person.detail.title %></p>
+<p>Age: <%= @person.detail.age %></p>
+<p>Phone: <%= @person.detail.phone %></p>
+
+<%= link_to 'Back to People List', people_path %>
+<%= link_to 'Edit Person', edit_person_path(@person) %>
+<%= button_to 'Delete Person', custom_destroy_person_path(@person), method: :delete, data: { confirm: 'Are you sure?' } %>

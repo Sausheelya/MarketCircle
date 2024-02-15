@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_15_094309) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_15_192303) do
   create_table "details", force: :cascade do |t|
     t.string "email"
     t.string "title"
@@ -29,4 +29,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_15_094309) do
   end
 
   add_foreign_key "details", "people"
+  add_foreign_key "details", "people", on_delete: :cascade
 end

@@ -1,0 +1,20 @@
+<%= form_with(model: @person, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.fields_for :detail do |detail_form| %>
+    <%= detail_form.label :email %>
+    <%= detail_form.text_field :email %>
+
+    <%= detail_form.label :title %>
+    <%= detail_form.text_field :title %>
+
+    <%= detail_form.label :age %>
+    <%= detail_form.number_field :age %>
+
+    <%= detail_form.label :phone %>
+    <%= detail_form.text_field :phone %>
+  <% end %>
+
+  <%= form.submit %>
+<% end %>
